@@ -1,10 +1,11 @@
-.test-container {
-    max-width: 22rem;
-}
-
 .box {
     padding: 4rem 0 0 0;
     border-radius: 1rem 1rem 10rem 10rem;
+    cursor: pointer;
+
+    &:hover > .info--container {
+        background: color(neutral-desaturated-blue);
+    }
 
     &.-work-box {
         background: url("../images/icon-work.svg") no-repeat,
@@ -18,12 +19,37 @@
         background-position: top -12px right 10px;
     }
 
+    &.-study-box {
+        background: url("../images/icon-study.svg") no-repeat,
+            linear-gradient(color(primary-study), color(primary-study));
+        background-position: top -12px right 10px;
+    }
+
+    &.-exercise-box {
+        background: url("../images/icon-exercise.svg") no-repeat,
+            linear-gradient(color(primary-exercise), color(primary-exercise));
+        background-position: top -12px right 10px;
+    }
+
+    &.-social-box {
+        background: url("../images/icon-social.svg") no-repeat,
+            linear-gradient(color(primary-social), color(primary-social));
+        background-position: top -12px right 10px;
+    }
+
+    &.-selfCare-box {
+        background: url("../images/icon-self-care.svg") no-repeat,
+            linear-gradient(color(primary-selfCare), color(primary-selfCare));
+        background-position: top -12px right 10px;
+    }
+
     > .info--container {
         border-radius: 1rem;
         background: color(neutral-dark-blue);
         display: flex;
         flex-direction: column;
         padding: 3rem 2rem;
+        transition: background 0.25s;
 
         .upper--wrap {
             display: flex;

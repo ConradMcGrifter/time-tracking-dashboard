@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 @import "abstracts/variables", "abstracts/functions", "abstracts/mixins";
 @import "base";
-@import "components/box";
+@import "layout/grid-container";
+@import "components/box", "components/person-card";

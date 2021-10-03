@@ -2,10 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- displays site properly based on user's device -->
 
         <link
@@ -18,7 +15,9 @@
         <title>Frontend Mentor | Time tracking dashboard</title>
     </head>
     <body>
-        <div class="test-container">
+        <div class="grid-container">
+            <!-- person card -->
+            <div class="person-card"></div>
             <!-- work -->
             <div class="box -work-box">
                 <div class="info--container">
@@ -54,6 +53,86 @@
                         <h3 class="hours" id="play-hours">10hrs</h3>
                         <h4 class="previousInfo" id="previous-play-hours">
                             Last Week - 8hrs
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Study -->
+            <div class="box -study-box">
+                <div class="info--container">
+                    <header class="upper--wrap">
+                        <h2 class="title">Study</h2>
+                        <img
+                            src="images/icon-ellipsis.svg"
+                            alt=""
+                            class="dots"
+                        />
+                    </header>
+                    <div class="hours--wrap">
+                        <h3 class="hours" id="study-hours">4hrs</h3>
+                        <h4 class="previousInfo" id="previous-study-hours">
+                            Last Week - 7hrs
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercise -->
+            <div class="box -exercise-box">
+                <div class="info--container">
+                    <header class="upper--wrap">
+                        <h2 class="title">Exercise</h2>
+                        <img
+                            src="images/icon-ellipsis.svg"
+                            alt=""
+                            class="dots"
+                        />
+                    </header>
+                    <div class="hours--wrap">
+                        <h3 class="hours" id="exercise-hours">4hrs</h3>
+                        <h4 class="previousInfo" id="previous-exercise-hours">
+                            Last Week - 5hrs
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social -->
+            <div class="box -social-box">
+                <div class="info--container">
+                    <header class="upper--wrap">
+                        <h2 class="title">Social</h2>
+                        <img
+                            src="images/icon-ellipsis.svg"
+                            alt=""
+                            class="dots"
+                        />
+                    </header>
+                    <div class="hours--wrap">
+                        <h3 class="hours" id="social-hours">5hrs</h3>
+                        <h4 class="previousInfo" id="previous-social-hours">
+                            Last Week - 10hrs
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Self Care -->
+            <div class="box -selfCare-box">
+                <div class="info--container">
+                    <header class="upper--wrap">
+                        <h2 class="title">Self Care</h2>
+                        <img
+                            src="images/icon-ellipsis.svg"
+                            alt=""
+                            class="dots"
+                        />
+                    </header>
+                    <div class="hours--wrap">
+                        <h3 class="hours" id="selfCare-hours">2hrs</h3>
+                        <h4 class="previousInfo" id="previous-selfCare-hours">
+                            Last Week - 2hrs
                         </h4>
                     </div>
                 </div>

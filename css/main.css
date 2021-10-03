@@ -4,6 +4,7 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 62.5%;
+  height: 100%;
 }
 
 *,
@@ -16,19 +17,46 @@ html {
 }
 
 body {
+  min-height: 100%;
   font-size: 1.8rem;
   font-family: "Rubik", sans-serif;
   background: #0f1424;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-.test-container {
-  max-width: 22rem;
+.grid-container {
+  max-width: 110rem;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  gap: 2.5rem;
 }
 
 .box {
   padding: 4rem 0 0 0;
   border-radius: 1rem 1rem 10rem 10rem;
+  cursor: pointer;
+}
+
+.box:hover > .info--container {
+  background: #6f76c8;
 }
 
 .box.-work-box {
@@ -43,6 +71,30 @@ body {
   background-position: top -12px right 10px;
 }
 
+.box.-study-box {
+  background: url("../images/icon-study.svg") no-repeat, -webkit-gradient(linear, left top, left bottom, from(#ff5c7c), to(#ff5c7c));
+  background: url("../images/icon-study.svg") no-repeat, linear-gradient(#ff5c7c, #ff5c7c);
+  background-position: top -12px right 10px;
+}
+
+.box.-exercise-box {
+  background: url("../images/icon-exercise.svg") no-repeat, -webkit-gradient(linear, left top, left bottom, from(#4acf81), to(#4acf81));
+  background: url("../images/icon-exercise.svg") no-repeat, linear-gradient(#4acf81, #4acf81);
+  background-position: top -12px right 10px;
+}
+
+.box.-social-box {
+  background: url("../images/icon-social.svg") no-repeat, -webkit-gradient(linear, left top, left bottom, from(#7536d3), to(#7536d3));
+  background: url("../images/icon-social.svg") no-repeat, linear-gradient(#7536d3, #7536d3);
+  background-position: top -12px right 10px;
+}
+
+.box.-selfCare-box {
+  background: url("../images/icon-self-care.svg") no-repeat, -webkit-gradient(linear, left top, left bottom, from(#f1c65b), to(#f1c65b));
+  background: url("../images/icon-self-care.svg") no-repeat, linear-gradient(#f1c65b, #f1c65b);
+  background-position: top -12px right 10px;
+}
+
 .box > .info--container {
   border-radius: 1rem;
   background: #1c1f4a;
@@ -54,6 +106,8 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 3rem 2rem;
+  -webkit-transition: background 0.25s;
+  transition: background 0.25s;
 }
 
 .box > .info--container .upper--wrap {
@@ -89,5 +143,16 @@ body {
   margin-top: 1rem;
   font-size: 1.4rem;
   font-weight: 400;
+}
+
+.person-card {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
+  background: red;
+  border-radius: 1rem;
 }
 /*# sourceMappingURL=main.css.map */
