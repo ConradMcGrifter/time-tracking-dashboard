@@ -5,10 +5,12 @@ const WEEKLY_CHECKBOX = document.querySelector("#weekly-checkbox");
 const YEARLY_CHECKBOX = document.querySelector("#yearly-checkbox");
 
 const fetchData = () => {
-    fetch("../data.json")
+    fetch("../data/data.json")
         .then((response) => response.json())
         .then((json) => {
-            console.log(json);
+            console.log(json[0]);
+
+            // take the first object and asign variable names to the object values of daily, weekly, and monthly properties. ex) work_Daily.current = 5 and work_Weekly.previous = 7
 
             // work data
             const {
@@ -18,6 +20,9 @@ const fetchData = () => {
                     monthly: work_Monthly,
                 },
             } = json[0];
+
+            console.log(work_Daily.current);
+            console.log(work_Daily.previous);
 
             // play data
             const {
@@ -65,3 +70,5 @@ const fetchData = () => {
             } = json[5];
         });
 };
+
+fetchData();
