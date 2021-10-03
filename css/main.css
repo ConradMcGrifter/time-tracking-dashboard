@@ -37,6 +37,12 @@ body {
   background-position: top -12px right 10px;
 }
 
+.box.-play-box {
+  background: url("../images/icon-play.svg") no-repeat, -webkit-gradient(linear, left top, left bottom, from(#56c2e6), to(#56c2e6));
+  background: url("../images/icon-play.svg") no-repeat, linear-gradient(#56c2e6, #56c2e6);
+  background-position: top -12px right 10px;
+}
+
 .box > .info--container {
   border-radius: 1rem;
   background: #1c1f4a;
@@ -70,16 +76,16 @@ body {
   cursor: pointer;
 }
 
-.box > .info--container .info--wrap {
+.box > .info--container .hours--wrap {
   margin-top: 2rem;
 }
 
-.box > .info--container .info--wrap .hours {
+.box > .info--container .hours--wrap .hours {
   font-size: 4.8rem;
   font-weight: 300;
 }
 
-.box > .info--container .info--wrap .previousInfo {
+.box > .info--container .hours--wrap .previousInfo {
   margin-top: 1rem;
   font-size: 1.4rem;
   font-weight: 400;

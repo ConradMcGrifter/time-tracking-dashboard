@@ -12,6 +12,12 @@
         background-position: top -12px right 10px;
     }
 
+    &.-play-box {
+        background: url("../images/icon-play.svg") no-repeat,
+            linear-gradient(color(primary-play), color(primary-play));
+        background-position: top -12px right 10px;
+    }
+
     > .info--container {
         border-radius: 1rem;
         background: color(neutral-dark-blue);
@@ -33,7 +39,7 @@
             }
         }
 
-        .info--wrap {
+        .hours--wrap {
             margin-top: 2rem;
             .hours {
                 font-size: 4.8rem;
