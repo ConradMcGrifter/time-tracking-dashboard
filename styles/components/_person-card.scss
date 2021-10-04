@@ -71,6 +71,10 @@
             font-size: 1.6rem;
             cursor: pointer;
 
+            &.selected {
+                color: white;
+            }
+
             &:hover {
                 color: white;
             }

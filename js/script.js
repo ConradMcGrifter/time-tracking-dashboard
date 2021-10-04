@@ -82,64 +82,79 @@ const fetchData = () => {
                 },
             } = json[5];
 
+            const setData = (
+                work,
+                play,
+                study,
+                exercise,
+                social,
+                selfCare,
+                str
+            ) => {
+                workHours.innerText = `${work.current}hrs`;
+                prevWorkHours.innerText = str + ` - ${work.previous}hrs`;
+
+                playHours.innerText = `${play.current}hrs`;
+                prevPlayHours.innerText = str + ` - ${play.previous}hrs`;
+
+                studyHours.innerText = `${study.current}hrs`;
+                prevStudyHours.innerText = str + ` - ${study.previous}hrs`;
+
+                exerciseHours.innerText = `${exercise.current}hrs`;
+                prevExerciseHours.innerText =
+                    str + ` - ${exercise.previous}hrs`;
+
+                socialHours.innerText = `${social.current}hrs`;
+                prevSocialHours.innerText = str + ` - ${social.previous}hrs`;
+
+                selfCareHours.innerText = `${selfCare.current}hrs`;
+                prevSelfCareHours.innerText =
+                    str + ` - ${selfCare.previous}hrs`;
+            };
+
             DAILY_BUTTON.addEventListener("click", () => {
-                workHours.innerText = `${work_Daily.current}hrs`;
-                prevWorkHours.innerText = `Yesterday - ${work_Daily.previous}hrs`;
-
-                playHours.innerText = `${play_Daily.current}hrs`;
-                prevPlayHours.innerText = `Yesterday - ${play_Daily.previous}hrs`;
-
-                studyHours.innerText = `${study_Daily.current}hrs`;
-                prevStudyHours.innerText = `Yesterday - ${study_Daily.previous}hrs`;
-
-                exerciseHours.innerText = `${exercise_Daily.current}hrs`;
-                prevExerciseHours.innerText = `Yesterday - ${exercise_Daily.previous}hrs`;
-
-                socialHours.innerText = `${social_Daily.current}hrs`;
-                prevSocialHours.innerText = `Yesterday - ${social_Daily.previous}hrs`;
-
-                selfCareHours.innerText = `${selfCare_Daily.current}hrs`;
-                prevSelfCareHours.innerText = `Yesterday - ${selfCare_Daily.previous}hrs`;
+                DAILY_BUTTON.classList.add("selected");
+                WEEKLY_BUTTON.classList.remove("selected");
+                MONTHLY_BUTTON.classList.remove("selected");
+                setData(
+                    work_Daily,
+                    play_Daily,
+                    study_Daily,
+                    exercise_Daily,
+                    social_Daily,
+                    selfCare_Daily,
+                    "Yesterday"
+                );
             });
 
             WEEKLY_BUTTON.addEventListener("click", () => {
-                workHours.innerText = `${work_Weekly.current}hrs`;
-                prevWorkHours.innerText = `Last Week - ${work_Weekly.previous}hrs`;
-
-                playHours.innerText = `${play_Weekly.current}hrs`;
-                prevPlayHours.innerText = `Last Week - ${play_Weekly.previous}hrs`;
-
-                studyHours.innerText = `${study_Weekly.current}hrs`;
-                prevStudyHours.innerText = `Last Week - ${study_Weekly.previous}hrs`;
-
-                exerciseHours.innerText = `${exercise_Weekly.current}hrs`;
-                prevExerciseHours.innerText = `Last Week - ${exercise_Weekly.previous}hrs`;
-
-                socialHours.innerText = `${social_Weekly.current}hrs`;
-                prevSocialHours.innerText = `Last Week - ${social_Weekly.previous}hrs`;
-
-                selfCareHours.innerText = `${selfCare_Weekly.current}hrs`;
-                prevSelfCareHours.innerText = `Last Week - ${selfCare_Weekly.previous}hrs`;
+                DAILY_BUTTON.classList.remove("selected");
+                WEEKLY_BUTTON.classList.add("selected");
+                MONTHLY_BUTTON.classList.remove("selected");
+                setData(
+                    work_Weekly,
+                    play_Weekly,
+                    study_Weekly,
+                    exercise_Weekly,
+                    social_Weekly,
+                    selfCare_Weekly,
+                    "Last Week"
+                );
             });
 
             MONTHLY_BUTTON.addEventListener("click", () => {
-                workHours.innerText = `${work_Monthly.current}hrs`;
-                prevWorkHours.innerText = `Last Month - ${work_Monthly.previous}hrs`;
-
-                playHours.innerText = `${play_Monthly.current}hrs`;
-                prevPlayHours.innerText = `Last Month - ${play_Monthly.previous}hrs`;
-
-                studyHours.innerText = `${study_Monthly.current}hrs`;
-                prevStudyHours.innerText = `Last Month - ${study_Monthly.previous}hrs`;
-
-                exerciseHours.innerText = `${exercise_Monthly.current}hrs`;
-                prevExerciseHours.innerText = `Last Month - ${exercise_Monthly.previous}hrs`;
-
-                socialHours.innerText = `${social_Monthly.current}hrs`;
-                prevSocialHours.innerText = `Last Month - ${social_Monthly.previous}hrs`;
-
-                selfCareHours.innerText = `${selfCare_Monthly.current}hrs`;
-                prevSelfCareHours.innerText = `Last Month - ${selfCare_Monthly.previous}hrs`;
+                DAILY_BUTTON.classList.remove("selected");
+                WEEKLY_BUTTON.classList.remove("selected");
+                MONTHLY_BUTTON.classList.add("selected");
+                setData(
+                    work_Monthly,
+                    play_Monthly,
+                    study_Monthly,
+                    exercise_Monthly,
+                    social_Monthly,
+                    selfCare_Monthly,
+                    "Last Month"
+                );
             });
         });
 };

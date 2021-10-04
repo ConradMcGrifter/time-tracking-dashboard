@@ -288,6 +288,10 @@ body {
   cursor: pointer;
 }
 
+.person-card > .timeframe-controls .timeframeButton.selected {
+  color: white;
+}
+
 .person-card > .timeframe-controls .timeframeButton:hover {
   color: white;
 }
