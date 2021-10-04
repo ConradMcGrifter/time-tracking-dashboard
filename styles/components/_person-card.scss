@@ -70,7 +70,7 @@
             text-align: start;
             font-size: 1.6rem;
             cursor: pointer;
-
+            transition: color 0.25s;
             &.selected {
                 color: white;
             }

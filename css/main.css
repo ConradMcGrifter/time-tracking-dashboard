@@ -148,6 +148,11 @@ body {
   margin-top: 2rem;
 }
 
+.box > .info--container .hours--wrap.animate {
+  -webkit-animation: fadeIn 0.5s ease-in-out;
+          animation: fadeIn 0.5s ease-in-out;
+}
+
 @media only screen and (max-width: 850px) {
   .box > .info--container .hours--wrap {
     margin-top: 1rem;
@@ -172,6 +177,24 @@ body {
   margin-top: 1rem;
   font-size: 1.4rem;
   font-weight: 400;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .person-card {
@@ -288,6 +311,8 @@ body {
   text-align: start;
   font-size: 1.6rem;
   cursor: pointer;
+  -webkit-transition: color 0.25s;
+  transition: color 0.25s;
 }
 
 .person-card > .timeframe-controls .timeframeButton.selected {

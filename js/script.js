@@ -4,6 +4,7 @@ const MONTHLY_BUTTON = document.querySelector("#monthlyButton");
 
 const boxes = Array.from(document.querySelectorAll(".info--container"));
 const dots = Array.from(document.querySelectorAll(".dots"));
+const hours = document.querySelectorAll(".hours--wrap");
 
 const workHours = document.querySelector("#work-hours");
 const prevWorkHours = document.querySelector("#previous-work-hours");
@@ -46,6 +47,14 @@ for (let i = 0; i < boxes.length; i++) {
         boxes[i].style.background = "hsl(236, 31%, 38%)";
     });
 }
+
+const fadeIn = () => {
+    for (let i = 0; i < hours.length; i++) {
+        hours[i].classList.remove("animate");
+        hours[i].scrollBy(0, 0);
+        hours[i].classList.add("animate");
+    }
+};
 
 const fetchData = () => {
     fetch("../data/data.json")
@@ -151,6 +160,8 @@ const fetchData = () => {
                     selfCare_Daily,
                     "Yesterday"
                 );
+
+                fadeIn();
             });
 
             WEEKLY_BUTTON.addEventListener("click", () => {
@@ -166,6 +177,8 @@ const fetchData = () => {
                     selfCare_Weekly,
                     "Last Week"
                 );
+
+                fadeIn();
             });
 
             MONTHLY_BUTTON.addEventListener("click", () => {
@@ -181,6 +194,8 @@ const fetchData = () => {
                     selfCare_Monthly,
                     "Last Month"
                 );
+
+                fadeIn();
             });
         });
 };
