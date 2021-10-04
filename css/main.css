@@ -117,10 +117,6 @@ body {
   transition: background 0.25s;
 }
 
-.box > .info--container:hover {
-  background: #43477f;
-}
-
 .box > .info--container .upper--wrap {
   display: -webkit-box;
   display: -ms-flexbox;

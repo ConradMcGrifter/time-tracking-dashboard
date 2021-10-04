@@ -2,6 +2,8 @@ const DAILY_BUTTON = document.querySelector("#dailyButton");
 const WEEKLY_BUTTON = document.querySelector("#weeklyButton");
 const MONTHLY_BUTTON = document.querySelector("#monthlyButton");
 
+const boxes = Array.from(document.querySelectorAll(".info--container"));
+
 const workHours = document.querySelector("#work-hours");
 const prevWorkHours = document.querySelector("#previous-work-hours");
 
@@ -19,6 +21,16 @@ const prevSocialHours = document.querySelector("#previous-social-hours");
 
 const selfCareHours = document.querySelector("#selfCare-hours");
 const prevSelfCareHours = document.querySelector("#previous-selfCare-hours");
+
+boxes.forEach((box) => {
+    box.addEventListener("mouseenter", () => {
+        box.style.background = "hsl(236, 31%, 38%)";
+    });
+
+    box.addEventListener("mouseleave", () => {
+        box.style.background = "hsl(235, 46%, 20%)";
+    });
+});
 
 const fetchData = () => {
     fetch("../data/data.json")
