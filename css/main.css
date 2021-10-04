@@ -136,6 +136,7 @@ body {
 
 .box > .info--container .upper--wrap .dots {
   cursor: pointer;
+  padding: 0.5rem 0;
 }
 
 .box > .info--container .upper--wrap .dots:hover {

@@ -27,7 +27,10 @@
 
     &.-exercise-box {
         background: url("../images/icon-exercise.svg") no-repeat,
-            linear-gradient(color(primary-exercise), color(primary-exercise));
+            linear-gradient(
+                color(primary-exercise),
+                color(primary-exercise)
+            );
         background-position: top -12px right 10px;
     }
 
@@ -39,7 +42,10 @@
 
     &.-selfCare-box {
         background: url("../images/icon-self-care.svg") no-repeat,
-            linear-gradient(color(primary-selfCare), color(primary-selfCare));
+            linear-gradient(
+                color(primary-selfCare),
+                color(primary-selfCare)
+            );
         background-position: top -12px right 10px;
     }
 
@@ -67,6 +73,7 @@
 
             .dots {
                 cursor: pointer;
+                padding: 0.5rem 0;
 
                 &:hover {
                     filter: brightness(150%);
