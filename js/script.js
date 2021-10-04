@@ -16,38 +16,39 @@ const studyHours = document.querySelector("#study-hours");
 const prevStudyHours = document.querySelector("#previous-study-hours");
 
 const exerciseHours = document.querySelector("#exercise-hours");
-const prevExerciseHours = document.querySelector(
-    "#previous-exercise-hours"
-);
+const prevExerciseHours = document.querySelector("#previous-exercise-hours");
 
 const socialHours = document.querySelector("#social-hours");
 const prevSocialHours = document.querySelector("#previous-social-hours");
 
 const selfCareHours = document.querySelector("#selfCare-hours");
-const prevSelfCareHours = document.querySelector(
-    "#previous-selfCare-hours"
-);
+const prevSelfCareHours = document.querySelector("#previous-selfCare-hours");
 
+// when cursor is over the box element, change the background color to hover style
 for (let i = 0; i < boxes.length; i++) {
     boxes[i].addEventListener("mouseenter", () => {
         boxes[i].style.background = "hsl(236, 31%, 38%)";
     });
 
+    // when cursor is over the dots, reset box color to initial value
     dots[i].addEventListener("mouseenter", () => {
         boxes[i].style.background = "hsl(235, 46%, 20%)";
     });
 }
 
+// when cursor leaves the box element, reset box color to initial value
 for (let i = 0; i < boxes.length; i++) {
     boxes[i].addEventListener("mouseleave", () => {
         boxes[i].style.background = "hsl(235, 46%, 20%)";
     });
 
+    // when mouse leaves the dots, change the background color of the box element to hover style
     dots[i].addEventListener("mouseleave", () => {
         boxes[i].style.background = "hsl(236, 31%, 38%)";
     });
 }
 
+// fade-in animation when user selects different times
 const fadeIn = () => {
     for (let i = 0; i < hours.length; i++) {
         hours[i].classList.remove("animate");
@@ -116,6 +117,7 @@ const fetchData = () => {
                 },
             } = json[5];
 
+            // this function takes the object variables from the parsed JSON data to set the correct hours in the HTML. it also takes a string that displays the timeframe
             const setData = (
                 work,
                 play,
@@ -139,8 +141,7 @@ const fetchData = () => {
                     str + ` - ${exercise.previous}hrs`;
 
                 socialHours.innerText = `${social.current}hrs`;
-                prevSocialHours.innerText =
-                    str + ` - ${social.previous}hrs`;
+                prevSocialHours.innerText = str + ` - ${social.previous}hrs`;
 
                 selfCareHours.innerText = `${selfCare.current}hrs`;
                 prevSelfCareHours.innerText =
@@ -148,9 +149,11 @@ const fetchData = () => {
             };
 
             DAILY_BUTTON.addEventListener("click", () => {
+                // set the styles for the selected button and remove styles from other buttons
                 DAILY_BUTTON.classList.add("selected");
                 WEEKLY_BUTTON.classList.remove("selected");
                 MONTHLY_BUTTON.classList.remove("selected");
+
                 setData(
                     work_Daily,
                     play_Daily,
@@ -165,9 +168,11 @@ const fetchData = () => {
             });
 
             WEEKLY_BUTTON.addEventListener("click", () => {
+                // set the styles for the selected button and remove styles from other buttons
                 DAILY_BUTTON.classList.remove("selected");
                 WEEKLY_BUTTON.classList.add("selected");
                 MONTHLY_BUTTON.classList.remove("selected");
+
                 setData(
                     work_Weekly,
                     play_Weekly,
@@ -182,9 +187,11 @@ const fetchData = () => {
             });
 
             MONTHLY_BUTTON.addEventListener("click", () => {
+                // set the styles for the selected button and remove styles from other buttons
                 DAILY_BUTTON.classList.remove("selected");
                 WEEKLY_BUTTON.classList.remove("selected");
                 MONTHLY_BUTTON.classList.add("selected");
+
                 setData(
                     work_Monthly,
                     play_Monthly,
