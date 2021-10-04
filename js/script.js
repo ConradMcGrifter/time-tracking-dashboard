@@ -3,6 +3,7 @@ const WEEKLY_BUTTON = document.querySelector("#weeklyButton");
 const MONTHLY_BUTTON = document.querySelector("#monthlyButton");
 
 const boxes = Array.from(document.querySelectorAll(".info--container"));
+const dots = Array.from(document.querySelectorAll(".dots"));
 
 const workHours = document.querySelector("#work-hours");
 const prevWorkHours = document.querySelector("#previous-work-hours");
@@ -14,30 +15,42 @@ const studyHours = document.querySelector("#study-hours");
 const prevStudyHours = document.querySelector("#previous-study-hours");
 
 const exerciseHours = document.querySelector("#exercise-hours");
-const prevExerciseHours = document.querySelector("#previous-exercise-hours");
+const prevExerciseHours = document.querySelector(
+    "#previous-exercise-hours"
+);
 
 const socialHours = document.querySelector("#social-hours");
 const prevSocialHours = document.querySelector("#previous-social-hours");
 
 const selfCareHours = document.querySelector("#selfCare-hours");
-const prevSelfCareHours = document.querySelector("#previous-selfCare-hours");
+const prevSelfCareHours = document.querySelector(
+    "#previous-selfCare-hours"
+);
 
-boxes.forEach((box) => {
-    box.addEventListener("mouseenter", () => {
-        box.style.background = "hsl(236, 31%, 38%)";
+for (let i = 0; i < boxes.length; i++) {
+    boxes[i].addEventListener("mouseenter", () => {
+        boxes[i].style.background = "hsl(236, 31%, 38%)";
     });
 
-    box.addEventListener("mouseleave", () => {
-        box.style.background = "hsl(235, 46%, 20%)";
+    dots[i].addEventListener("mouseenter", () => {
+        boxes[i].style.background = "hsl(235, 46%, 20%)";
     });
-});
+}
+
+for (let i = 0; i < boxes.length; i++) {
+    boxes[i].addEventListener("mouseleave", () => {
+        boxes[i].style.background = "hsl(235, 46%, 20%)";
+    });
+
+    dots[i].addEventListener("mouseleave", () => {
+        boxes[i].style.background = "hsl(236, 31%, 38%)";
+    });
+}
 
 const fetchData = () => {
     fetch("../data/data.json")
         .then((response) => response.json())
         .then((json) => {
-            console.log(json[0]);
-
             // take the first object and asign variable names to the object values of daily, weekly, and monthly properties. ex) work_Daily.current = 5 and work_Weekly.previous = 7
 
             // work data
@@ -117,7 +130,8 @@ const fetchData = () => {
                     str + ` - ${exercise.previous}hrs`;
 
                 socialHours.innerText = `${social.current}hrs`;
-                prevSocialHours.innerText = str + ` - ${social.previous}hrs`;
+                prevSocialHours.innerText =
+                    str + ` - ${social.previous}hrs`;
 
                 selfCareHours.innerText = `${selfCare.current}hrs`;
                 prevSelfCareHours.innerText =
