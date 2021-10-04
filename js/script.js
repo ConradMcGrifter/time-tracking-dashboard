@@ -60,7 +60,6 @@ const fetchData = () => {
     fetch("./data/data.json")
         .then((response) => response.json())
         .then((json) => {
-            console.log(json);
             // take the first object and asign variable names to the object values of daily, weekly, and monthly properties. ex) work_Daily.current = 5 and work_Weekly.previous = 7
 
             // work data
