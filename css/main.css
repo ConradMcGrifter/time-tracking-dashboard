@@ -66,10 +66,6 @@ body {
   cursor: pointer;
 }
 
-.box:hover > .info--container {
-  background: #6f76c8;
-}
-
 .box.-work-box {
   background: url("../images/icon-work.svg") no-repeat, -webkit-gradient(linear, left top, left bottom, from(#ff8c66), to(#ff8c66));
   background: url("../images/icon-work.svg") no-repeat, linear-gradient(#ff8c66, #ff8c66);
@@ -121,6 +117,10 @@ body {
   transition: background 0.25s;
 }
 
+.box > .info--container:hover {
+  background: #43477f;
+}
+
 .box > .info--container .upper--wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -140,6 +140,11 @@ body {
 
 .box > .info--container .upper--wrap .dots {
   cursor: pointer;
+}
+
+.box > .info--container .upper--wrap .dots:hover {
+  -webkit-filter: brightness(150%);
+          filter: brightness(150%);
 }
 
 .box > .info--container .hours--wrap {
