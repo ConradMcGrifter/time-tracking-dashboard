@@ -1,4 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 html {
   height: 100%;
   -webkit-box-sizing: border-box;
@@ -63,7 +80,6 @@ body {
 .box {
   padding: 4rem 0 0 0;
   border-radius: 1.5rem 1.5rem 10rem 10rem;
-  cursor: pointer;
 }
 
 .box.-work-box {
@@ -103,6 +119,7 @@ body {
 }
 
 .box > .info--container {
+  cursor: pointer;
   border-radius: 1.5rem;
   background: #1c1f4a;
   display: -webkit-box;
@@ -117,7 +134,7 @@ body {
   transition: background 0.25s;
 }
 
-.box > .info--container .upper--wrap {
+.box > .info--container > .upper--wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -129,32 +146,32 @@ body {
           justify-content: space-between;
 }
 
-.box > .info--container .upper--wrap .title {
+.box > .info--container > .upper--wrap .title {
   font-size: 1.8rem;
   font-weight: 500;
 }
 
-.box > .info--container .upper--wrap .dots {
+.box > .info--container > .upper--wrap .dots {
   cursor: pointer;
   padding: 0.5rem 0;
 }
 
-.box > .info--container .upper--wrap .dots:hover {
+.box > .info--container > .upper--wrap .dots:hover {
   -webkit-filter: brightness(150%);
           filter: brightness(150%);
 }
 
-.box > .info--container .hours--wrap {
+.box > .info--container > .hours--wrap {
   margin-top: 2rem;
 }
 
-.box > .info--container .hours--wrap.animate {
+.box > .info--container > .hours--wrap.animate {
   -webkit-animation: fadeIn 0.5s ease-in-out;
           animation: fadeIn 0.5s ease-in-out;
 }
 
 @media only screen and (max-width: 850px) {
-  .box > .info--container .hours--wrap {
+  .box > .info--container > .hours--wrap {
     margin-top: 1rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -168,33 +185,15 @@ body {
   }
 }
 
-.box > .info--container .hours--wrap .hours {
+.box > .info--container > .hours--wrap .hours {
   font-size: clamp(3.2rem, 5vw, 4.8rem);
   font-weight: 300;
 }
 
-.box > .info--container .hours--wrap .previousInfo {
+.box > .info--container > .hours--wrap .previousInfo {
   margin-top: 1rem;
   font-size: 1.4rem;
   font-weight: 400;
-}
-
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .person-card {

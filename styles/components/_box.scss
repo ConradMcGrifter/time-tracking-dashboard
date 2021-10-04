@@ -1,11 +1,6 @@
 .box {
     padding: 4rem 0 0 0;
     border-radius: $border-radius $border-radius 10rem 10rem;
-    cursor: pointer;
-
-    // &:hover > .info--container {
-    //     background: color(neutral-desaturated-blue);
-    // }
 
     &.-work-box {
         background: url("../images/icon-work.svg") no-repeat,
@@ -27,10 +22,7 @@
 
     &.-exercise-box {
         background: url("../images/icon-exercise.svg") no-repeat,
-            linear-gradient(
-                color(primary-exercise),
-                color(primary-exercise)
-            );
+            linear-gradient(color(primary-exercise), color(primary-exercise));
         background-position: top -12px right 10px;
     }
 
@@ -42,14 +34,12 @@
 
     &.-selfCare-box {
         background: url("../images/icon-self-care.svg") no-repeat,
-            linear-gradient(
-                color(primary-selfCare),
-                color(primary-selfCare)
-            );
+            linear-gradient(color(primary-selfCare), color(primary-selfCare));
         background-position: top -12px right 10px;
     }
 
     > .info--container {
+        cursor: pointer;
         border-radius: $border-radius;
         background: color(neutral-dark-blue);
         display: flex;
@@ -57,11 +47,7 @@
         padding: 3rem;
         transition: background 0.25s;
 
-        // &:hover {
-        //     background: hsl(236, 31%, 38%);
-        // }
-
-        .upper--wrap {
+        > .upper--wrap {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -81,7 +67,7 @@
             }
         }
 
-        .hours--wrap {
+        > .hours--wrap {
             margin-top: 2rem;
 
             &.animate {
@@ -105,14 +91,5 @@
                 font-weight: 400;
             }
         }
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
     }
 }
