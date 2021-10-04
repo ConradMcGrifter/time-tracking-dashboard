@@ -102,7 +102,45 @@ const fetchData = () => {
                 prevSelfCareHours.innerText = `Yesterday - ${selfCare_Daily.previous}hrs`;
             });
 
-            console.log(selfCareHours);
+            WEEKLY_BUTTON.addEventListener("click", () => {
+                workHours.innerText = `${work_Weekly.current}hrs`;
+                prevWorkHours.innerText = `Last Week - ${work_Weekly.previous}hrs`;
+
+                playHours.innerText = `${play_Weekly.current}hrs`;
+                prevPlayHours.innerText = `Last Week - ${play_Weekly.previous}hrs`;
+
+                studyHours.innerText = `${study_Weekly.current}hrs`;
+                prevStudyHours.innerText = `Last Week - ${study_Weekly.previous}hrs`;
+
+                exerciseHours.innerText = `${exercise_Weekly.current}hrs`;
+                prevExerciseHours.innerText = `Last Week - ${exercise_Weekly.previous}hrs`;
+
+                socialHours.innerText = `${social_Weekly.current}hrs`;
+                prevSocialHours.innerText = `Last Week - ${social_Weekly.previous}hrs`;
+
+                selfCareHours.innerText = `${selfCare_Weekly.current}hrs`;
+                prevSelfCareHours.innerText = `Last Week - ${selfCare_Weekly.previous}hrs`;
+            });
+
+            MONTHLY_BUTTON.addEventListener("click", () => {
+                workHours.innerText = `${work_Monthly.current}hrs`;
+                prevWorkHours.innerText = `Last Month - ${work_Monthly.previous}hrs`;
+
+                playHours.innerText = `${play_Monthly.current}hrs`;
+                prevPlayHours.innerText = `Last Month - ${play_Monthly.previous}hrs`;
+
+                studyHours.innerText = `${study_Monthly.current}hrs`;
+                prevStudyHours.innerText = `Last Month - ${study_Monthly.previous}hrs`;
+
+                exerciseHours.innerText = `${exercise_Monthly.current}hrs`;
+                prevExerciseHours.innerText = `Last Month - ${exercise_Monthly.previous}hrs`;
+
+                socialHours.innerText = `${social_Monthly.current}hrs`;
+                prevSocialHours.innerText = `Last Month - ${social_Monthly.previous}hrs`;
+
+                selfCareHours.innerText = `${selfCare_Monthly.current}hrs`;
+                prevSelfCareHours.innerText = `Last Month - ${selfCare_Monthly.previous}hrs`;
+            });
         });
 };
 
