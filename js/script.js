@@ -1,8 +1,24 @@
-const OUTPUT = document.querySelector(".timeframe-output");
+const DAILY_BUTTON = document.querySelector("#dailyButton");
+const WEEKLY_BUTTON = document.querySelector("#weeklyButton");
+const MONTHLY_BUTTON = document.querySelector("#monthlyButton");
 
-const DAILY_CHECKBOX = document.querySelector("#daily-checkbox");
-const WEEKLY_CHECKBOX = document.querySelector("#weekly-checkbox");
-const YEARLY_CHECKBOX = document.querySelector("#yearly-checkbox");
+const workHours = document.querySelector("#work-hours");
+const prevWorkHours = document.querySelector("#previous-work-hours");
+
+const playHours = document.querySelector("#play-hours");
+const prevPlayHours = document.querySelector("#previous-play-hours");
+
+const studyHours = document.querySelector("#study-hours");
+const prevStudyHours = document.querySelector("#previous-study-hours");
+
+const exerciseHours = document.querySelector("#exercise-hours");
+const prevExerciseHours = document.querySelector("#previous-exercise-hours");
+
+const socialHours = document.querySelector("#social-hours");
+const prevSocialHours = document.querySelector("#previous-social-hours");
+
+const selfCareHours = document.querySelector("#selfCare-hours");
+const prevSelfCareHours = document.querySelector("#previous-selfCare-hours");
 
 const fetchData = () => {
     fetch("../data/data.json")
@@ -20,9 +36,6 @@ const fetchData = () => {
                     monthly: work_Monthly,
                 },
             } = json[0];
-
-            console.log(work_Daily.current);
-            console.log(work_Daily.previous);
 
             // play data
             const {
@@ -68,6 +81,28 @@ const fetchData = () => {
                     monthly: selfCare_Monthly,
                 },
             } = json[5];
+
+            DAILY_BUTTON.addEventListener("click", () => {
+                workHours.innerText = `${work_Daily.current}hrs`;
+                prevWorkHours.innerText = `Yesterday - ${work_Daily.previous}hrs`;
+
+                playHours.innerText = `${play_Daily.current}hrs`;
+                prevPlayHours.innerText = `Yesterday - ${play_Daily.previous}hrs`;
+
+                studyHours.innerText = `${study_Daily.current}hrs`;
+                prevStudyHours.innerText = `Yesterday - ${study_Daily.previous}hrs`;
+
+                exerciseHours.innerText = `${exercise_Daily.current}hrs`;
+                prevExerciseHours.innerText = `Yesterday - ${exercise_Daily.previous}hrs`;
+
+                socialHours.innerText = `${social_Daily.current}hrs`;
+                prevSocialHours.innerText = `Yesterday - ${social_Daily.previous}hrs`;
+
+                selfCareHours.innerText = `${selfCare_Daily.current}hrs`;
+                prevSelfCareHours.innerText = `Yesterday - ${selfCare_Daily.previous}hrs`;
+            });
+
+            console.log(selfCareHours);
         });
 };
 

@@ -48,7 +48,7 @@
         background: color(neutral-dark-blue);
         display: flex;
         flex-direction: column;
-        padding: 3rem 2rem;
+        padding: 2.5rem;
         transition: background 0.25s;
 
         .upper--wrap {
@@ -58,6 +58,7 @@
 
             .title {
                 font-size: 1.8rem;
+                font-weight: 500;
             }
 
             .dots {
@@ -67,8 +68,14 @@
 
         .hours--wrap {
             margin-top: 2rem;
+            @include mobileSize {
+                margin-top: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
             .hours {
-                font-size: 4.8rem;
+                font-size: clamp(3.2rem, 5vw, 4.8rem);
                 font-weight: 300;
             }
 
